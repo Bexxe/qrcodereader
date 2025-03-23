@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&family=Ubuntu:wght@700&display=swap');
+
+
+.giris-tablo{
+    height: 70vh;
+    position: relative;
+    top: 270px;
+    background-color: rgba(194, 192, 192, 0.342);
+    border-radius: 10px;
+}
+.cikis-tablo{
+    height: 70vh;
+    position: relative;
+    top: 270px;
+    background-color: rgba(194, 192, 192, 0.342);
+    border-radius: 10px;
+}
+.secim-tablo{
+    height: 70vh;
+    position: relative;
+    top: 270px;
+    background-color: rgba(194, 192, 192, 0.342);
+    border-radius: 10px;
+}
+.no{
+    position: relative;
+    right: 20px;
+}
+.secim input[type='checkbox']{
+   font-size: 50px;
+}
+.baslik{
+    background-color: rgb(0, 110, 255);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-left: 1px solid white;
+    border-radius: 5px;
+    font-family: 'Ubuntu', sans-serif;
+}
+.icerik-back{
+    padding: 10px;
+    border-bottom: 2px solid white;
+    transition: 500ms;
+}
+.icerik-back:hover{
+    padding: 10px;
+    background-color: white;
+    transition: 500ms;
+    cursor: pointer;
+}
+.icerik{
+    font-family: 'Ubuntu', sans-serif;
+}

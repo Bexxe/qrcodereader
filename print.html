@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yazdırma</title>
+    <script type="text/javascript" src="js/qrcode.min.js"></script>
+<div id="yqcode" class="yqcode"></div>
+</head>
+<body>
+
+    <form id="myForm">
+        <input type="checkbox" class="check" value="16"> 16
+        <input type="checkbox" class="check" value="17"> 17
+        <input type="checkbox" class="check" value="18"> 18
+        <button type="button" onclick="yazdir()">Yazdır</button>
+    </form>
+
+    <script>
+function yazdir() {
+    var checkedCheckboxes = document.querySelectorAll('.check:checked');
+    var selectedValues = [];
+
+    checkedCheckboxes.forEach(function (checkbox) {
+        selectedValues.push(checkbox.value);
+    });
+
+    if (selectedValues.length > 0) {
+
+      var qrcode = new QRCode("yqcode", {
+              text: 'selam',
+              width: 200,
+              height: 200,
+              colorDark: "black",
+              correctLevel: QRCode.CorrectLevel.H
+      });
+
+
+        for (let i = 0; i < selectedValues.length; i++) {
+            var yeniSayfa = window.open();
+        yeniSayfa.document.write('<html><head><title>Yazdırma</title></head><body>');
+            yeniSayfa.document.write('<p>' + selectedValues[i] + '</p>');
+            yeniSayfa.document.write('</body></html>');
+
+// Yeni sayfayı yazdır
+yeniSayfa.print();
+        }
+
+
+    } else {
+        alert("Hiçbir checkbox seçilmedi.");
+    }
+}
+    </script>
+
+</body>
+</html>
